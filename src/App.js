@@ -55,9 +55,11 @@ const App = () => {
         newOrder
       );
       setOrder(incomingOrder);
-      console.log(handleCaptureCheckout, "handleCaptureCheckout");
+      console.log("handleCaptureCheckout");
       refreshCart();
     } catch (error) {
+      console.log("handleCaptureCheckout-1");
+      refreshCart();
       setErrorMessage(error);
     }
   };

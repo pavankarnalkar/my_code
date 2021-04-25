@@ -69,7 +69,6 @@ const AddressForm = ({ checkoutToken, next }) => {
     );
     console.log(options, "options");
 
-    
     setShippingOptions(options);
     setShippingOption(options[0]);
   };
@@ -114,48 +113,48 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormInput name="email" label="Email" required />
             <FormInput name="city" label="City" required />
             <FormInput name="zip" label="ZIP / Postal code" required />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <InputLabel>Shipping Country</InputLabel>
-            <Select
-              value={shippingCountry}
-              fullWidth
-              onChange={(e) => setShippingCountry(e.target.value)}
-            >
-              {countries.map((country) => (
-                <MenuItem key={country.id} value={country.id}>
-                  {country.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <InputLabel>Shipping Subdivision</InputLabel>
-            <Select
-              value={shippingSubDivision}
-              fullWidth
-              onChange={(e) => setShippingSubDivision(e.target.value)}
-            >
-              {subdivisions.map((subdivision) => (
-                <MenuItem key={subdivision.id} value={subdivision.id}>
-                  {subdivision.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <InputLabel>Shipping Options</InputLabel>
-            <Select
-              value={shippingOption}
-              fullWidth
-              onChange={(e) => setShippingOption(e.target.value)}
-            >
-              {options.map((option) => (
-                <MenuItem key={option.id} value={option.id}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </Select>
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Country</InputLabel>
+              <Select
+                value={shippingCountry}
+                fullWidth
+                onChange={(e) => setShippingCountry(e.target.value)}
+              >
+                {countries.map((country) => (
+                  <MenuItem key={country.id} value={country.id}>
+                    {country.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Subdivision</InputLabel>
+              <Select
+                value={shippingSubDivision}
+                fullWidth
+                onChange={(e) => setShippingSubDivision(e.target.value)}
+              >
+                {subdivisions.map((subdivision) => (
+                  <MenuItem key={subdivision.id} value={subdivision.id}>
+                    {subdivision.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Options</InputLabel>
+              <Select
+                value={shippingOption}
+                fullWidth
+                onChange={(e) => setShippingOption(e.target.value)}
+              >
+                {options.map((option) => (
+                  <MenuItem key={option.id} value={option.id}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
           </Grid>
           <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>

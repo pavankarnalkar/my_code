@@ -13,6 +13,7 @@ const FormInput = ({ name, label }) => {
         label={label}
         name={name}
         control={control}
+        defaultValue=""
       />
     </Grid>
   );

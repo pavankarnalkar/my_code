@@ -15,8 +15,10 @@ const PaymentForm = ({
   backStep,
   onCaptureCheckout,
   nextStep,
+  timeOut,
 }) => {
   const handleSubmit = async (event, elements, stripe) => {
+    console.log("pvn");
     event.preventDefault();
 
     if (!stripe || !elements) return;
@@ -29,6 +31,7 @@ const PaymentForm = ({
     });
 
     if (error) {
+      console.log("pvnKar");
       console.log(error);
     } else {
       const orderData = {
@@ -45,7 +48,7 @@ const PaymentForm = ({
           county_state: shippingData.shippingSubDivision,
           postal_zip: shippingData.zip,
           country: shippingData.shippingCountry,
-          description: shippingData.description,
+          // description: shippingData.description,
         },
         fulfillment: { shipping_method: shippingData.shippingOption },
         payment: {
@@ -57,7 +60,8 @@ const PaymentForm = ({
       };
 
       onCaptureCheckout(checkoutToken.id, orderData);
-
+      timeOut();
+      // console.log(handleSubmit, "handleSubmit-2");
       nextStep();
     }
   };
@@ -75,7 +79,7 @@ const PaymentForm = ({
               <CardElement />
               <br />
               <br />
-              <div style={{ display: "flex", justification: "space-between" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Button variant="outlined" onClick={backStep}>
                   Back
                 </Button>
